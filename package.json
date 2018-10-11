@@ -1,0 +1,46 @@
+{
+  "name": "react-template",
+  "version": "1.0.0",
+  "description": "React template for quickly starting a react project.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server/index.js",
+    "build": "browserify -g uglifyify -t babelify client/ -o server/public/main.js",
+    "watch:server": "nodemon server/index.js",
+    "watch:client": "watchify -vd -t babelify client/ -o server/public/main.js",
+    "watch:public": "browser-sync start -c browser-sync.js",
+    "watch": "npm-run-all --parallel watch:*"
+  },
+  "keywords": [
+    "react",
+    "template",
+    "boilerplate"
+  ],
+  "babel": {
+    "plugins": [
+      "transform-react-jsx",
+      "transform-object-rest-spread",
+      "transform-es2015-modules-commonjs"
+    ]
+  },
+  "author": "Taylor Griffin",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.26.2",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-plugin-transform-react-jsx": "^6.24.1",
+    "babelify": "^8.0.0",
+    "browser-sync": "^2.24.5",
+    "nodemon": "^1.18.3",
+    "npm-run-all": "^4.1.3",
+    "uglifyify": "^5.0.1",
+    "watchify": "^3.11.0"
+  },
+  "dependencies": {
+    "dotenv": "^6.1.0",
+    "express": "^4.16.3",
+    "react": "^16.5.2",
+    "react-dom": "^16.4.2"
+  }
+}
