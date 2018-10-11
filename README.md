@@ -1,5 +1,5 @@
 # react-template
-A react template.
+A react template preloaded with browser-sync, nodemon, express and bootstrap.
 
 
 1. Clone repo.
